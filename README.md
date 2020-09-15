@@ -69,7 +69,9 @@ ca_dir="/etc/kubernetes/ssl"
 # Deploy Directory (kubeasz workspace)
 base_dir="/etc/ansible"
 ```
+
 #### 部署
+
 ```shell
 ansible-playbook 01.prepare.yml
 ansible-playbook 02.etcd.yml
@@ -85,6 +87,7 @@ ansible-playbook 07.cluster-addon.yml
 
 
 #### 增加节点
+
 ```
 修改ansibel hosts
 [NODE_TO_ADD]
@@ -94,7 +97,9 @@ ansible-playbook tools/02.addnode.yml
 ```
 
 
+
 #### 其他插件部署
+
 ```
 cd manifests 
 kubectl apply -f xxx
