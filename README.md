@@ -2,6 +2,14 @@
 > 基于ansible 配置免密登录
 
 
+#### 二进制文件版本下载
+```
+./tools/easzup -D -d 19.03.5 -k v1.16.6
+-D docker 版本
+-k K8s版本
+
+```
+
 ```shell
 修改 hosts
 # 'etcd' cluster should have odd member(s) (1,3,5,...)
@@ -103,4 +111,12 @@ ansible-playbook tools/02.addnode.yml
 ```
 cd manifests 
 kubectl apply -f xxx
+```
+#### 集群验证
+```
+<master 节点>
+kubectl version         # 验证集群版本     
+kubectl get node        # 验证节点就绪 (Ready) 状态
+kubectl get pod -A      # 验证集群pod状态，默认已安装网络插件、coredns、metrics-server等
+kubectl get svc -A      # 验证集群服务状态
 ```
