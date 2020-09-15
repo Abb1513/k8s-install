@@ -1,5 +1,5 @@
 #### 使用
-> 基于ansibel 配置免密登录
+> 基于ansible 配置免密登录
 
 
 ```shell
@@ -89,7 +89,7 @@ ansible-playbook 07.cluster-addon.yml
 #### 增加节点
 
 ```
-修改ansibel hosts
+修改ansible hosts
 [NODE_TO_ADD]
 192.168.1.100
 
