@@ -1,5 +1,7 @@
 #### 使用
 > 基于ansibel 配置免密登录
+
+
 ```shell
 修改 hosts
 # 'etcd' cluster should have odd member(s) (1,3,5,...)
@@ -80,6 +82,8 @@ ansible-playbook 07.cluster-addon.yml
 #ansible-playbook 90.setup.yml
 #最后的输出 failed=0 则为成功 如果不等于0 记得查看异常信息并修复
 ```
+
+
 #### 增加节点
 ```
 修改ansibel hosts
