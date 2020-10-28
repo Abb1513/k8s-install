@@ -113,6 +113,7 @@ cd manifests
 kubectl apply -f xxx
 ```
 #### 集群验证
+
 ```
 <master 节点>
 kubectl version         # 验证集群版本     

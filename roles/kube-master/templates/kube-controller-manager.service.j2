@@ -4,7 +4,7 @@ Documentation=https://github.com/GoogleCloudPlatform/kubernetes
 
 [Service]
 ExecStart={{ bin_dir }}/kube-controller-manager \
-  --address=127.0.0.1 \
+  --address={{ inventory_hostname }} \
   --allocate-node-cidrs=true \
   --cluster-cidr={{ CLUSTER_CIDR }} \
   --cluster-name=kubernetes \
@@ -17,6 +17,12 @@ ExecStart={{ bin_dir }}/kube-controller-manager \
   --service-account-private-key-file={{ ca_dir }}/ca-key.pem \
   --service-cluster-ip-range={{ SERVICE_CIDR }} \
   --use-service-account-credentials=true \
+  --experimental-cluster-signing-duration=876000h \
+  --horizontal-pod-autoscaler-sync-period=10s \
+  --concurrent-deployment-syncs=10 \
+  --concurrent-gc-syncs=30 \
+  --node-cidr-mask-size=24 \
+   --pod-eviction-timeout=6m \
   --v=2
 Restart=always
 RestartSec=5

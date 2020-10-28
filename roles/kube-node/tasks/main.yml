@@ -49,7 +49,7 @@
   debug: var="KUBE_VER"
 
 - name: 创建kubelet的配置文件
-  template: src=kubelet-config.yaml.j2 dest=/var/lib/kubelet/config.yaml
+  template: src=kubelet-config.yaml.j2 dest= {{ KUBELET_ROOT_DIR }}/config.yaml
   tags: upgrade_k8s, restart_node
 
 - name: 创建kubelet的systemd unit文件
